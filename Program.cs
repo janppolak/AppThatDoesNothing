@@ -3,6 +3,7 @@ using System.IO;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
+using Dapper;
 
 namespace ConsoleApp5
 {
@@ -11,10 +12,12 @@ namespace ConsoleApp5
         static void Main(string[] args)
         {
             var bands = CollectionCreator.CreateBandList();
-            var bestBand = CollectionExtensions.SelectBestBand(bands);
-            CollectionExtensions.DisplayItems(bestBand);
+            var bestBand = CollectionMethods.SelectBestBand(bands);
+            CollectionMethods.DisplayItems(bestBand);
             var serialized = JsonSaver.SerializeToJson(bestBand);
             JsonSaver.SaveFileAsJson(serialized);
+
+            DbConnection.Connect();
 
 
         }

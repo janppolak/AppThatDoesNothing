@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp5
 {
-    internal class CollectionExtensions
+    internal class CollectionMethods
     {
 
         public static IEnumerable<Band> SelectBestBand(List<Band> bands)

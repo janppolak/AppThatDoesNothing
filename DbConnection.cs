@@ -12,16 +12,26 @@ namespace ConsoleApp5
     internal class DbConnection
     {
 
-        public static void Connect()
+        public static void Connect(List<Band> bands)
         {
             string connectionString = @"Data Source=.\SQLExpress;Initial Catalog=Bands;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-            string insertSql = "INSERT INTO dbo.[Bands] (Name, Rating, Genre) Values ('Metallica', 5.5, 'Metal');";
+            List<string> insertSql = new List<string>();
 
+            foreach (Band band in bands)
+            {
+                insertSql.Add($"INSERT INTO dbo.[Bands] (Name, Rating, Genre) Values ('{band.Name}', {band.Rating}, '{band.Genre}')");
+            }
+            
             using (var connection = new SqlConnection(connectionString))
             {
-                var affectedRow = connection.Execute(insertSql);
-                Console.WriteLine("Affected Row: " + affectedRow);
+                foreach (string sql in insertSql)
+                {
+                    var affectedRow = connection.Execute(sql); 
+                    
+                }
+                
             }
+
         }
     }
 }

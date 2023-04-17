@@ -17,7 +17,7 @@ namespace ConsoleApp5
             var serialized = JsonSaver.SerializeToJson(bestBand);
             JsonSaver.SaveFileAsJson(serialized);
 
-            DbConnection.Connect();
+            DbConnection.Connect(bands);
 
 
         }

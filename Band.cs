@@ -9,7 +9,7 @@ namespace ConsoleApp5
     internal class Band
     {
         public string Name { get; set; }
-        public double Rating { get; set; }
+        public int Rating { get; set; }
         public Genre Genre { get; set; }
     }
 }

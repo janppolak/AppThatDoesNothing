@@ -20,22 +20,21 @@ namespace ConsoleApp5
             //JsonSaver.SaveFileAsJson(serialized);
 
             //bands.InsertIntoDb();
-            var bandsFromDb = Repository.GetAll<Band>();
 
-            foreach (var band in bandsFromDb)
-            {
-                Console.WriteLine(band);
-            }
+            var reader = new EntityDataReader(GetRepository());
+            reader.ListAllItems<Band>();
 
             //bands.SelectBestBands();
 
             // zaimplementować update
             // dependecy injection
             // testy jednostkowe
+            // .gitignore i czyste repo w GH
         }
 
-
-
-
+        private static IRepository GetRepository()
+        {
+            return new Repository();
+        }
     }
 }

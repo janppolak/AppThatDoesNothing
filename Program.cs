@@ -13,28 +13,27 @@ namespace ConsoleApp5
     {
         static void Main(string[] args)
         {
-            //var bands = CollectionCreator.CreateBandList();
+            var bands = CollectionCreator.CreateBandList();
             //var bestBands = CollectionCreator.SelectBestBands(bands);
             //CollectionCreator.DisplayItems(bestBands);
             //var serialized = JsonSaver.SerializeToJson(bestBands);
             //JsonSaver.SaveFileAsJson(serialized);
 
-            //bands.InsertIntoDb();
-
             var reader = new EntityDataReader(GetRepository());
             reader.ListAllItems<Band>();
 
-            //bands.SelectBestBands();
+            var updater = new Repository();
+            updater.InsertIntoDb(bands);
 
-            // zaimplementować update
-            // dependecy injection
-            // testy jednostkowe
-            // .gitignore i czyste repo w GH
         }
-
         private static IRepository GetRepository()
         {
             return new Repository();
         }
+
+        // .gitignore i czyste repo w GH - done
+        // zaimplementować update - done
+        // dependecy injection
+        // testy jednostkowe
     }
 }

@@ -18,7 +18,7 @@ namespace ConsoleApp5
         public void ListAllItems<T>() where T : Entity
         {
             var items = _repository.GetAll<T>();
-
+            
             foreach (var item in items)
             {
                 Console.WriteLine(item);

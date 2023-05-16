@@ -22,11 +22,15 @@ namespace ConsoleApp5
             var reader = new EntityDataReader(GetRepository());
             reader.ListAllItems<Band>();
 
-            var updater = new Repository();
+            var updater = new EntityDataWriter(InsertEntities());
             updater.InsertIntoDb(bands);
 
         }
         private static IRepository GetRepository()
+        {
+            return new Repository();
+        }
+        private static IRepository InsertEntities()
         {
             return new Repository();
         }

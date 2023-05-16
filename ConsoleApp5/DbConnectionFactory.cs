@@ -10,4 +10,5 @@ namespace ConsoleApp5
             return new SqlConnection(ConnectionString);
         }
     }
+
 }

@@ -7,19 +7,19 @@ namespace ConsoleApp5
 {
     public interface IRepository
     {
-        void InsertIntoDb<T>(IEnumerable<T> entities) where T : Entity;
+        //    void InsertIntoDb<T>(IEnumerable<T> entities) where T : Entity;
         IEnumerable<T> GetAll<T>() where T : Entity;
     }
 
     public class Repository : IRepository
     {
-        public void InsertIntoDb<T>(IEnumerable<T> entities) where T : Entity
-        {            
-            using (var connection = DbConnectionFactory.Create())
-            {
-                connection.Insert(entities);
-            }
-        }
+        //public void InsertIntoDb<T>(IEnumerable<T> entities) where T : Entity
+        //{
+        //    using (var connection = DbConnectionFactory.Create())
+        //    {
+        //        connection.Insert(entities);
+        //    }
+        //}
 
         public IEnumerable<T> GetAll<T>() where T : Entity
         {

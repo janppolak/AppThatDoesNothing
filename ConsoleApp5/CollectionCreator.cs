@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp5
 {
-    internal static class CollectionCreator
+    public static class CollectionCreator
     {
         public static IEnumerable<Band> CreateBandList()
         {
-            yield return new Band { Name = "Dream Theater", Rating = 99.99M, GenereEnum = Genre.Blues };
+            yield return new Band { Name = "Dream Theater", Rating = 99.99M, GenereEnum = Genre.Metal };
             yield return new Band { Name = "Symphony X", Rating = 3.33M, GenereEnum = Genre.Blues };
 
         }

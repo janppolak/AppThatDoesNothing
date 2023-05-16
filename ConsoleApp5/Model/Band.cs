@@ -3,10 +3,8 @@
 namespace ConsoleApp5.Model
 {
     [Table("Band")]
-    internal class Band : Entity
+    public class Band : Entity
     {
-        [Key]
-        public long BandId { get; set; }
         public string Name { get; set; }
         public decimal Rating { get; set; }
 
@@ -17,7 +15,7 @@ namespace ConsoleApp5.Model
 
         public override string ToString()
         {
-            return $"{BandId} - Name: {Name} | Genre {GenereEnum} | Rating {Rating}";
+            return $"{Id} - Name: {Name} | Genre {GenereEnum} | Rating {Rating}";
         }
     }
 }

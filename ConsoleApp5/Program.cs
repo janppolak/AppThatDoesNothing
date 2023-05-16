@@ -19,18 +19,17 @@ namespace ConsoleApp5
             //var serialized = JsonSaver.SerializeToJson(bestBands);
             //JsonSaver.SaveFileAsJson(serialized);
 
-            var reader = new EntityDataReader(GetRepository());
-            reader.ListAllItems<Band>();
+            var repository = GetRepository();
 
-            var updater = new EntityDataWriter(InsertEntities());
-            updater.InsertIntoDb(bands);
+            //repository.InsertMany(bands);
+
+            //var reader = new EntityDataReader(repository);
+            //reader.ListAllItems<Band>();
+            var band = repository.Get<Band>(2);
+            Console.WriteLine(band);
 
         }
         private static IRepository GetRepository()
-        {
-            return new Repository();
-        }
-        private static IRepository InsertEntities()
         {
             return new Repository();
         }

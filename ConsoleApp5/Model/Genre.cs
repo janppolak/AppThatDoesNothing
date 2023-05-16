@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp5.Model
 {
-    internal enum Genre
+    public enum Genre
     {
         Metal,
         Pop,

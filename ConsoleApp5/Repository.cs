@@ -20,6 +20,7 @@ namespace ConsoleApp5
     {
         public void Delete<T>(T entity) where T : Entity
         {
+            // tutaj beda zajebiste zmiany
             throw new NotImplementedException();
         }
 

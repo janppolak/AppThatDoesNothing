@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp5
 {
-    public class EntityDataReader
+    public class EntityDataDisplayer
     {
         private readonly IRepository _repository;
-        public EntityDataReader(IRepository repository)
+        public EntityDataDisplayer(IRepository repository)
         {
             _repository = repository;
         }

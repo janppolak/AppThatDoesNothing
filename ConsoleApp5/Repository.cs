@@ -20,8 +20,10 @@ namespace ConsoleApp5
     {
         public void Delete<T>(T entity) where T : Entity
         {
-            // tutaj beda zajebiste zmiany - poprawki 1, 2,3 
-            throw new NotImplementedException();
+            using (var connection = DbConnectionFactory.Create())
+            {
+                connection.Delete<T>(entity);
+            }
         }
 
         public T Get<T>(long id) where T : Entity
@@ -42,7 +44,10 @@ namespace ConsoleApp5
 
         public void Insert<T>(T entity) where T : Entity
         {
-            throw new NotImplementedException();
+            using (var connection = DbConnectionFactory.Create())
+            {
+                connection.Insert<T>(entity);
+            }
         }
 
         public void InsertMany<T>(IEnumerable<T> entities) where T : Entity
@@ -55,7 +60,14 @@ namespace ConsoleApp5
 
         public void Update<T>(Func<T> updateFunc) where T : Entity
         {
-            throw new NotImplementedException();
+            //var = new T();
+            //UpdateFunc(x);
+            //Update(x);
+
+            using (var connection = DbConnectionFactory.Create())
+            {
+                connection.Update<T>(updateFunc());
+            }
         }
     }
 

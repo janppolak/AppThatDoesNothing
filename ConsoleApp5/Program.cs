@@ -48,7 +48,7 @@ namespace ConsoleApp5
                     break;
                 case 3:
                     reader.ListAllItems<Band>();
-                    Console.WriteLine("Choose index of record you want to delete: ");
+                    Console.WriteLine("Choose id of record you want to delete: ");
                     int.TryParse(Console.ReadLine(), out var entityToBeDeleted);
                     var band = repository.Get<Band>(entityToBeDeleted);
                     repository.Delete(band);

@@ -15,7 +15,7 @@ namespace ConsoleApp5
             _repository = repository;
         }
 
-        public void ListAllItems<T>() where T : Entity
+        public IEnumerable<T> ListAllItems<T>() where T : Entity
         {
             var items = _repository.GetAll<T>();
             
@@ -23,6 +23,7 @@ namespace ConsoleApp5
             {
                 Console.WriteLine(item);
             }
+            return items;
         }
         
     }

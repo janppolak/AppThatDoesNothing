@@ -15,7 +15,7 @@ namespace ConsoleApp5
             _repository = repository;
         }
 
-        public IEnumerable<T> ListAllItems<T>() where T : Entity
+        public void ListAllItems<T>() where T : Entity
         {
             var items = _repository.GetAll<T>();
             
@@ -23,7 +23,10 @@ namespace ConsoleApp5
             {
                 Console.WriteLine(item);
             }
-            return items;
+            if (!items.Any())
+            {
+                Console.WriteLine("The list is empty!");
+            }
         }
         
     }

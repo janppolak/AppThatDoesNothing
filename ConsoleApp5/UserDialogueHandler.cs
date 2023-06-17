@@ -37,8 +37,6 @@ namespace ConsoleApp5
             Console.WriteLine("Enter a band genre: ");
             var genreInput = Console.ReadLine();
             Genre genreResult = (Genre)Enum.Parse(typeof(Genre), genreInput);
-            Console.WriteLine(genreResult);
-
             var newBand = new Band { Name = name, Rating = rating, GenreEnum = genreResult };
             repository.Insert(newBand);
             Console.WriteLine($"The item {newBand.Name} has been inserted successfully!\n");

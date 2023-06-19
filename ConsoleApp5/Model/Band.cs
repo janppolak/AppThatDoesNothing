@@ -9,13 +9,15 @@ namespace ConsoleApp5.Model
         public decimal Rating { get; set; }
 
         [Computed]
-        public Genre GenereEnum { get; set; }
+        public Genre GenreEnum { get; set; }
         
-        public string Genre => GenereEnum.ToString();
+        public string Genre => GenreEnum.ToString();
+
+        public bool IsDeleted { get; set; }
 
         public override string ToString()
         {
-            return $"{Id} - Name: {Name} | Genre {GenereEnum} | Rating {Rating}";
+            return $"{Id} - Name: {Name} | Genre {GenreEnum} | Rating {Rating}";
         }
     }
 }

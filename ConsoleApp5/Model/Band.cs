@@ -10,8 +10,9 @@ namespace ConsoleApp5.Model
 
         [Computed]
         public Genre GenreEnum { get; set; }
-        
+
         public string Genre => GenreEnum.ToString();
+
 
         public bool IsDeleted { get; set; }
 

@@ -15,11 +15,11 @@ namespace ConsoleApp5
         {
             var repository = GetRepository();
             var reader = new EntityDataDisplayer(repository);
-            var message = "Choose action:  \n1 - to display all items from the database \n2 - to insert a new new record to the database \n3 - to delete item from the database";
+            var message = "Choose action:  \n1 - to display all items from the database \n2 - to insert a new record to the database \n3 - to delete item from the database \n4 - to update record in the database \n";
 
             while (true)
             {
-                switch (UserDialogueHandler.ReadInt(message))
+                switch (UserDialogueHandler.ReadInt(message, 1, 4))
                 {
                     case 1:
                         UserDialogueHandler.ListItemsFromDb(reader);
@@ -32,11 +32,13 @@ namespace ConsoleApp5
                     case 3:
                         UserDialogueHandler.DeleteItemFromDb(reader, repository);
                         break;
+
+                    case 4:
+                        UserDialogueHandler.UpdateItemInDb(reader, repository);
+                        break;
                 }
             }
-
         }
-
         private static IRepository GetRepository()
         {
             return new Repository();
